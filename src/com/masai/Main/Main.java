@@ -5,15 +5,19 @@ import java.util.Scanner;
 
 import com.masai.dao.adminDao;
 import com.masai.dao.daoImpl;
+import com.masai.usecases.LoginStudClass;
 import com.masai.usecases.adminUpdateFeeCourse;
 import com.masai.usecases.adminaddcourse;
 import com.masai.usecases.allocateStudentInBatch;
 import com.masai.usecases.creatingBatchUnderCour;
 import com.masai.usecases.deleteCourse;
+import com.masai.usecases.regStudCourBatchClass;
 import com.masai.usecases.searchCourseInfo;
+import com.masai.usecases.updateSeatsOfBatch;
+import com.masai.usecases.viewStudentsOfBatch;
 
 public class Main {
-
+	static boolean isPresent = false;
 	public static void main(String[] args) throws Exception {
 		System.out.println();
 		System.out.println(" Welcome to Automated Student registration system!");
@@ -33,7 +37,8 @@ public class Main {
 			int num = sc.nextInt();
 			
 			if(num == 1) {
-				if(daoObj.checkForAdminFunction()) {
+				isPresent = daoObj.checkForAdminFunction(isPresent);
+				if(isPresent) {
 					System.out.println();
 					System.out.println("Welcome Admin!");
 					System.out.println();
@@ -52,28 +57,40 @@ public class Main {
 					int num1 = sc.nextInt();
 					
 					switch(num1) {
-					case 1:
-						adminaddcourse a = new adminaddcourse();
-						break;
+						case 1:
+							adminaddcourse a = new adminaddcourse();
+							break;
+							
+						case 2:
+							adminUpdateFeeCourse a1 = new adminUpdateFeeCourse();
+							break;
+							
+						case 3:
+							deleteCourse a2 = new deleteCourse();
+							break;
 						
-					case 2:
-						adminUpdateFeeCourse a1 = new adminUpdateFeeCourse();
-						break;
-						
-					case 3:
-						deleteCourse a2 = new deleteCourse();
-						break;
-					
-					case 4:
-						searchCourseInfo a3 = new searchCourseInfo();
-						break;
-						
-					case 5:
-						creatingBatchUnderCour a4 = new creatingBatchUnderCour();
-						break;
-						
-					case 6 :
-						allocateStudentInBatch a5 = new allocateStudentInBatch();
+						case 4:
+							searchCourseInfo a3 = new searchCourseInfo();
+							break;
+							
+						case 5:
+							creatingBatchUnderCour a4 = new creatingBatchUnderCour();
+							break;
+							
+						case 6 :
+							allocateStudentInBatch a5 = new allocateStudentInBatch();
+							break;
+							
+						case 7:
+							updateSeatsOfBatch a6 = new updateSeatsOfBatch();
+							break;
+							
+						case 8:
+							viewStudentsOfBatch a7 = new viewStudentsOfBatch();
+							break;
+							
+						default:
+							throw new IllegalArgumentException("Unexpected value . enter valid opt. please.");
 					}
 				}
 				else {
@@ -81,6 +98,18 @@ public class Main {
 				}
 				
 			}
+			else if(num == 2) {
+				regStudCourBatchClass obj2 = new regStudCourBatchClass();
+			}
+			else if(num == 3) {
+				LoginStudClass lsObj = new LoginStudClass();
+			}
+
+			else{
+				System.out.println("Please enter valid input 1, 2 or 3");
+				Main.main(null);
+			}
+			
 		}
 		catch(InputMismatchException ime) {
 			System.out.println("Please enter valid input");

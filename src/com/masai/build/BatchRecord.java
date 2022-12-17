@@ -16,37 +16,55 @@ public class BatchRecord {
 		this.studentEmail = sEmail;
 	}
 
-	public int getBatchUid() {
+
+
+	public int getBatchRecordId() {
 		return batchRecordId;
 	}
 
-	public void setBatchUid(int batchUid) {
-		this.batchRecordId = batchUid;
+
+
+	public void setBatchRecordId(int batchRecordId) {
+		this.batchRecordId = batchRecordId;
 	}
+
+
 
 	public int getBatchNo() {
 		return batchNo;
 	}
 
+
+
 	public void setBatchNo(int batchNo) {
 		this.batchNo = batchNo;
 	}
 
-	public int getcId() {
+
+
+	public int getCourseId() {
 		return courseId;
 	}
 
-	public void setcId(int cId) {
-		this.courseId = cId;
+
+
+	public void setCourseId(int courseId) {
+		this.courseId = courseId;
 	}
 
-	public String getsEmail() {
+
+
+	public String getStudentEmail() {
 		return studentEmail;
 	}
 
-	public void setsEmail(String sEmail) {
-		this.studentEmail = sEmail;
+
+
+	public void setStudentEmail(String studentEmail) {
+		this.studentEmail = studentEmail;
 	}
+
+
 
 	@Override
 	public int hashCode() {
