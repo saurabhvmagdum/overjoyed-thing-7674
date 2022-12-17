@@ -4,26 +4,30 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import com.masai.dao.adminDao;
+import com.masai.dao.daoImpl;
 import com.masai.usecases.adminUpdateFeeCourse;
 import com.masai.usecases.adminaddcourse;
+import com.masai.usecases.allocateStudentInBatch;
+import com.masai.usecases.creatingBatchUnderCour;
 import com.masai.usecases.deleteCourse;
+import com.masai.usecases.searchCourseInfo;
 
 public class Main {
 
 	public static void main(String[] args) throws Exception {
 		System.out.println();
-		System.out.println("     						Welcome to Automated Student registration system!");
+		System.out.println(" Welcome to Automated Student registration system!");
 		
 		adminDao daoObj = new daoImpl();
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println();
 		System.out.println();
-		System.out.println("     						Please choose your profile by entering the number below-");
+		System.out.println(" Please choose your profile by entering the number below-");
 		System.out.println();
-		System.out.println("     						1. Administrator");
-		System.out.println("     						2. Register in a course as a student");
-		System.out.println("     						3. Login as student");
+		System.out.println(" 1. Administrator");
+		System.out.println(" 2. Register in a course as a student");
+		System.out.println(" 3. Login as student");
 
 		try {
 			int num = sc.nextInt();
@@ -58,6 +62,18 @@ public class Main {
 						
 					case 3:
 						deleteCourse a2 = new deleteCourse();
+						break;
+					
+					case 4:
+						searchCourseInfo a3 = new searchCourseInfo();
+						break;
+						
+					case 5:
+						creatingBatchUnderCour a4 = new creatingBatchUnderCour();
+						break;
+						
+					case 6 :
+						allocateStudentInBatch a5 = new allocateStudentInBatch();
 					}
 				}
 				else {

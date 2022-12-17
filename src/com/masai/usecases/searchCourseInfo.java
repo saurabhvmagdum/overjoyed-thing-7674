@@ -9,8 +9,8 @@ import com.masai.build.Course;
 import com.masai.dao.adminDao;
 import com.masai.dao.daoImpl;
 
-public class deleteCourse {
-	public deleteCourse()  throws SQLException, courException {
+public class searchCourseInfo {
+	public searchCourseInfo() throws SQLException, courException {
 		Scanner sc = new Scanner(System.in);
 		adminDao daoObj = new daoImpl();
 		List<Course> lisOfCourses = daoObj.getListOfCourses();
@@ -18,8 +18,8 @@ public class deleteCourse {
 		lisOfCourses.forEach(c ->{
 			System.out.println(c.getCname());
 		});
-		System.out.println("Enter course name to delete:");
+		System.out.println("Enter course name to get info");
 		String cName = sc.next();
-		daoObj.adminDeleteCourFunction(cName);
+		daoObj.adminDisCourInfoFunction(cName);
 	}
 }
