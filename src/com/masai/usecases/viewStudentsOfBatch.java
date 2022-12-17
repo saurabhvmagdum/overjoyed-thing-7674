@@ -3,9 +3,9 @@ package com.masai.usecases;
 import com.masai.dao.adminDao;
 import com.masai.dao.daoImpl;
 
-public class adminUpdateFeeCourse {
-	public adminUpdateFeeCourse() {
+public class viewStudentsOfBatch {
+	public viewStudentsOfBatch() {
 		adminDao obj = new daoImpl();
-		obj.adminUpdateFeesOfCourFunction();
+		obj.viewStudentsOfBatchFunction();
 	}
 }
