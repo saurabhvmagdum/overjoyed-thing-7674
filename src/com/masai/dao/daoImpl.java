@@ -706,7 +706,7 @@ public class daoImpl implements adminDao {
 		boolean isVal = false;
 
 		try(Connection conn = DBUtility.getConnection()){
-			PreparedStatement ps = conn.prepareStatement("select cName from courses where cName = ?");
+			PreparedStatement ps = conn.prepareStatement("select courseName from course where courseName = ?");
 			ps.setString(1, str1);
 			ResultSet rs = ps.executeQuery();
 			

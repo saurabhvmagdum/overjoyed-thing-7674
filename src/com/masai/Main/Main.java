@@ -17,6 +17,7 @@ import com.masai.usecases.updateSeatsOfBatch;
 import com.masai.usecases.viewStudentsOfBatch;
 
 public class Main {
+	
 	static boolean isPresent = false;
 	public static void main(String[] args) throws Exception {
 		System.out.println();
